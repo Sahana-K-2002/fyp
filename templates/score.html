@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Sphere</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="banner">
+        <h1 style="text-align: center; width:100%; padding-top:20px;">Resume Sphere : Crafting careers in digital world !</h1>
+        <div class="intro">
+            Our Resume Scoring feature is designed to elevate your job search experience by intelligently assessing the synergy between your resume and the specific job you're eyeing. We delve into the intricacies of the job description, pinpointing crucial keywords and experience prerequisites. This comprehensive analysis results in a detailed score, not only reflecting the alignment of keywords but also weighing the relevance of your professional background against the job's expectations. Whether you're a seasoned professional or an emerging talent, our Resume Scoring service provides a strategic advantage, guiding you to fine-tune your resume for optimal impact in today's competitive job market.
+        </div>
+        <div>
+            <div class="upload">
+            <form action="/process_files" method="POST" enctype="multipart/form-data">
+                <label for="text">Upload job description  </label>
+                <input type="file" id="job_description" name="job_description" accept=".pdf"><br><br>
+                
+                <label for="pdf">Upload resume PDF   </label>
+                <input type="file" id="resume" name="resume" accept=".pdf"><br><br>
+                
+                <input class="button" type="submit" value="Submit">
+            </form>
+        </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="objintro">
+        <h3>Extracted keywords from JD</h3>
+        {{extracted_jd_words}}
+        </div>
+        <div class="objintro">
+        <h3>Common Keywords present in your resume</h3>
+        {{common_keywords}}
+        </div>
+        <div class="objintro">
+            <h3>Try using some important keywords highlighted if applicable to improve your resume score</h3>
+            {{job_description | safe}}
+        </div>
+        <!-- <h1>Resume keywords</h1>
+        {{resumekeywords}}
+        <h1>Highlight</h1>
+        {{Highlight}}
+        <h1>Missing keywords </h1>
+        {{miss}} -->
+       
+        <div class="objintro">
+            <h3>Score based on keyword matching and experience </h3>
+            {{keyscore}} %
+        </div>
+        <div class="objintro">
+            <h3>Score based on similarity:</h3>
+            {{score}} %
+        </div>
+        <div class="objintro">
+            <h3>Did you miss out these skills ? </h3>
+            {{skills}}
+        </div>
+        <div class="objintro">
+            <h3>Predicted job role for your resume : </h3>
+            {{pred}}
+        </div>
+    </div>
+</body>
+</html>

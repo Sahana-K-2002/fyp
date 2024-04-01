@@ -1,0 +1,207 @@
+Machine learning
+Operating system 
+Node.js
+ejs
+React
+Express.js
+MongoDB
+MySQL
+Nosql
+sqllite
+Big data
+Pig 
+Apache kafka
+Apache Spark
+Hadoop
+Python
+Java
+C++
+JavaScript
+C#
+Ruby
+Swift
+Kotlin
+PHP
+HTML/CSS
+SQL
+MATLAB
+TypeScript
+Shell scripting (Bash)
+Go
+Scala
+Rust
+Dart
+Objective-C
+Communication Skills
+Verbal communication
+Written communication
+Active listening
+Teamwork
+Collaboration
+Conflict resolution
+Team building
+Adaptability
+Flexibility
+Openness to change
+Ability to learn quickly
+Problem Solving
+Critical thinking
+Analytical skills
+Decision making
+Time Management
+Prioritization
+Meeting deadlines
+Multitasking
+Leadership
+Delegation
+Motivation
+Taking initiative
+Creativity
+Thinking outside the box
+Innovation
+Problem-solving creativity
+Emotional Intelligence
+Empathy
+Self-awareness
+Relationship management
+Interpersonal Skills
+Building relationships
+Networking
+Conflict resolution
+Organizational Skills
+Planning
+Attention to detail
+Goal setting
+Customer Service
+Client interaction
+Relationship building
+Customer satisfaction
+Negotiation Skills
+Contract negotiation
+Conflict resolution
+Persuasion
+Adaptability
+Openness to new ideas
+Ability to work in diverse environments
+Resilience
+Dependability
+Reliability
+Consistency
+Punctuality
+Self-Motivation
+Initiative
+Drive
+Goal-oriented mindset
+Presentation Skills
+Public speaking
+Visual presentation (e.g., using slides)
+Engaging an audience
+Cultural Awareness
+Respect for diversity
+Global mindset
+Cross-cultural communication
+Conflict Resolution
+Mediation
+Diplomacy
+Constructive problem-solving
+Advanced calculus
+Linear algebra
+Differential equations
+Physics
+Classical mechanics
+Electromagnetism
+Thermodynamics
+Programming and Software Tools
+Proficiency in programming languages (e.g., Python, Java, C++)
+CAD (Computer-Aided Design) software
+Simulation software (e.g., MATLAB, ANSYS, SolidWorks)
+Materials Science
+Understanding of material properties
+Knowledge of different types of materials and their applications
+Mechanics and Dynamics
+Statics and dynamics analysis
+Structural analysis
+Fluid mechanics
+Electronics
+Circuit design and analysis
+Digital and analog electronics
+Microcontroller programming
+Control Systems
+Control theory
+Feedback systems
+PLC (Programmable Logic Controller) programming
+Thermodynamics and Heat Transfer
+Thermodynamic principles
+Heat transfer analysis
+HVAC (Heating, Ventilation, and Air Conditioning) systems
+Manufacturing Processes
+Understanding of various manufacturing techniques
+CNC machining
+3D printing
+Communication Skills
+Technical writing
+Presentation skills
+Interpersonal communication
+Project Management
+Planning and organizing engineering projects
+Budgeting and resource management
+Environmental Engineering
+Environmental impact assessment
+Waste management
+Pollution control techniques
+Renewable Energy
+Knowledge of renewable energy sources (solar, wind, etc.)
+Energy conversion systems
+Civil Engineering
+Structural design and analysis
+Geotechnical engineering
+Transportation engineering
+Chemical Engineering
+Chemical process engineering
+Reaction engineering
+Process control
+Electrical Engineering
+Power systems
+Power electronics
+Electric machines and drives
+Computer Science
+Computer networks
+Database management
+Cybersecurity
+Biomedical Engineering
+Medical imaging
+Windows
+Linux 
+Unix
+Agile
+version control 
+software design 
+AWS
+Azure
+Google Cloud
+Cloud computing
+Android
+ios development
+Flutter
+Firebase
+Tensorflow 
+PyTorch
+Docker
+Jenkins
+Kubernetes
+sdlc
+UI/UX
+UI
+UX
+user experience
+user interface
+Adobe XD
+sketch
+Documentation
+Adobe suite
+SQL
+SAP 
+MS word
+Outlook
+keras
+scikit learn
