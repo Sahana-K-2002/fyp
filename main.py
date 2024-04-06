@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template,render_template_string,send_file
+from flask import Flask, request, jsonify, render_template,render_template_string,send_file,redirect, url_for, session,flash
 from flask_cors import CORS
 import spacy
 from spacy.matcher import Matcher
@@ -12,8 +12,27 @@ from pyresparser import ResumeParser
 import model1 as m
 import model2 as m2
 
+from flask_mysqldb import MySQL
+import MySQLdb.cursors
+import re
+import datetime
+
 app = Flask(__name__)
 CORS(app)
+
+app.secret_key = '1a2b3c4d5e6d7g8h9i10'
+
+# MySQL configs
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = '*******'
+app.config['MYSQL_DB'] = 'loginapp'
+
+
+# Intialize MySQL
+mysql = MySQL(app)
+
+app.permanent_session_lifetime = datetime.timedelta(minutes=1)
 
 spacy_model = spacy.load("en_core_web_sm")
 matcher = Matcher(spacy_model.vocab)
@@ -29,7 +48,9 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 
 @app.route('/')
 def index():
-    return render_template('home.html')
+    if 'loggedin' in session:
+        return render_template('home.html')
+    return redirect(url_for('login'))
 
 @app.route('/score')
 def get_resume_score():
@@ -142,7 +163,76 @@ def extract_text_from_pdf(file_path):
         pdf_text += page.extract_text()
     return pdf_text
 
+@app.route('/pythonlogin/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM accounts WHERE username = %s AND password = %s', (username, password))
+        
+        account = cursor.fetchone()
+                
+        if account:
+            session['loggedin'] = True
+            session['id'] = account['id']
+            session['username'] = account['username']
+            
+            return redirect(url_for('index'))
+        else:
+            flash("Incorrect username/password!", "danger")
+    return render_template('auth/login.html',title="Login")
+
+
+@app.route('/pythonlogin/register', methods=['GET', 'POST'])
+def register():
+    
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
+                
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute( "SELECT * FROM accounts WHERE username LIKE %s", [username] )
+        account = cursor.fetchone()
+    
+        if account:
+            flash("Account already exists!", "danger")
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+            flash("Invalid email address!", "danger")
+        elif not re.match(r'[A-Za-z0-9]+', username):
+            flash("Username must contain only characters and numbers!", "danger")
+        elif not username or not password or not email:
+            flash("Incorrect username/password!", "danger")
+        else:
+            cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (username,email, password))
+            mysql.connection.commit()
+            flash("You have successfully registered!", "success")
+            return redirect(url_for('login'))
+
+    elif request.method == 'POST':
+        flash("Please fill out the form!", "danger")
+    return render_template('auth/register.html',title="Register")
+
+
+@app.route('/logout')
+def logout():
+    session.pop('loggedin', None)
+    session.pop('id', None)
+    session.pop('username', None)
+    return redirect(url_for('login'))
+
+@app.route('/profile')
+def profile():
+    if 'loggedin' in session:
+       
+        return render_template('auth/profile.html', username=session['username'],title="Profile")
+    return redirect(url_for('login'))  
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
