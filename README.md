@@ -13,7 +13,7 @@ Download and install MySQL Community Server and MySQL Workbench, you can skip th
 
 
 ### Requirements ,Packages used and Installation
-Download and install Python, for this tutorial I'll be using Python 3.7.2, make sure to check the box Add Python to PATH on the installation setup screen
+Download and install Python,MySQL
  
 ### Installation
 Navigate to your current project directory for this case it will be **fyp**. <br>
